@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Epicalyx_Game_Reviews.Models.AspectReview>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StoryRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoundtrackRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GraphicsRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GameplayRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MultiplayerRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StoryCompletion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalCompletion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Game)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StoryRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoundtrackRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GraphicsRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GameplayRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MultiplayerRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StoryCompletion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalCompletion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.UserID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Game.AgeRating)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AspectReviewID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AspectReviewID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AspectReviewID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

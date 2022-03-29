@@ -30,17 +30,18 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+           
             <td>
-                @Html.DisplayFor(modelItem => item.Review)
+                 @Html.DisplayFor(modelItem => item.User.Username)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FinalRating)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Game.AgeRating)
+                @Html.DisplayFor(modelItem => item.Game.GameName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.User.UserID)
+                @Html.DisplayFor(modelItem => item.Review)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.FinalReviewID">Edit</a> |
